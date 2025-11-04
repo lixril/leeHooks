@@ -1,0 +1,36 @@
+{
+  "name": "@lixril/leehooks",
+  "version": "1.0.0",
+  "description": "A huge custom hooks library for react that make developers ease of code and their usage also easier",
+  "license": "ISC",
+  "author": "Abdul Quddus",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lixril/leeHooks.git"
+  },
+  "scripts": {
+    "build:cjs": "babel src --out-dir dist --copy-files --env-name cjs",
+    "build:esm": "babel src --out-dir dist --copy-files --env-name esm",
+    "build": "npm run build:cjs && npm run build:esm"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/preset-react": "^7.28.5"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  }
+}
