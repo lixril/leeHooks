@@ -1,0 +1,9 @@
+@echo off
+echo Installing dependencies...
+call npm install
+echo.
+echo Building package...
+call npm run build
+echo.
+echo Testing package...
+node test-package.js
