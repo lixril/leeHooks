@@ -15,9 +15,11 @@
     "url": "git+https://github.com/lixril/leeHooks.git"
   },
   "scripts": {
-    "build:cjs": "babel src --out-dir dist --copy-files --env-name cjs",
-    "build:esm": "babel src --out-dir dist --copy-files --env-name esm",
-    "build": "npm run build:cjs && npm run build:esm"
+    "clean": "if exist dist rmdir /s /q dist",
+    "build:cjs": "babel src --out-dir dist --copy-files --env-name cjs --extensions .js",
+    "build:esm": "babel src --out-dir dist --out-file-extension .esm.js --env-name esm --extensions .js",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
     "@babel/preset-react": "^7.28.5"
   },
   "exports": {
