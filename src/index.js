@@ -2,5 +2,6 @@
 
 export * from './useWindowSize';
 export * from './useAsyncState';
-// Add an export line for every hook file you create
+export * from './useSmartData';
+// Add an export line for every hook file I create
 // export * from './useNewHookName';

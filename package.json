@@ -4,9 +4,8 @@
   "description": "A huge custom hooks library for react that make developers ease of code and their usage also easier",
   "license": "ISC",
   "author": "Abdul Quddus",
-  "type": "commonjs",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "type": "module",
+  "main": "dist/index.esm.js",
   "files": [
     "dist"
   ],
@@ -16,9 +15,7 @@
   },
   "scripts": {
     "clean": "if exist dist rmdir /s /q dist",
-    "build:cjs": "babel src --out-dir dist --copy-files --env-name cjs --extensions .js",
-    "build:esm": "babel src --out-dir dist --out-file-extension .esm.js --env-name esm --extensions .js",
-    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "build": "babel src --out-dir dist --copy-files --extensions .js",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -31,9 +28,6 @@
     "@babel/preset-react": "^7.28.5"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
-    }
+    ".": "./dist/index.js"
   }
 }
