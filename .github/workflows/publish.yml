@@ -3,14 +3,14 @@ name: CI and Publish
 on:
   push:
     tags:
-      - 'v*.*.*'   # e.g. v1.0.0
+      - 'v*.*.*' # e.g. v1.0.0
 
 jobs:
   test-and-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write  # needed for some OIDC setups
+      id-token: write # needed for some OIDC setups
 
     steps:
       - uses: actions/checkout@v4
